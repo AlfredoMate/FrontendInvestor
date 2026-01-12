@@ -1,0 +1,12 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+.myButton:hover {
+    background-color: green;
+}
+.myButton {
+    border-radius: 5px;
+}
+.userInput {
+    border-radius: 5px;
+}
