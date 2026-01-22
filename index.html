@@ -10,7 +10,24 @@
     Welcome to Investor!
     <br>
     <br>
-    <main id="app"></main>   
+    <main id="app"></main>
+    
+    <template id="dashboard-template">
+        <h2>Dashboard</h2>
+        <form>
+        <input class="userInput" id="userInput" type="text" placeholder="Enter ticker name">
+        <button class="myButton" type="button" id="submitButton">Submit </button>
+        <p id="output"></p>   
+        </form>
+    </template>
+    <template id="login-template">
+        <h2>Login</h2>
+        <input id="username" placeholder="Username" />
+        <input id="password" placeholder="password" />
+
+        <button id="loginBtn">Login</button>
+    </template>
+
     <script src="dashboard.js"></script> 
     <script src="router.js"></script>  
     <script src="login.js"></script>    
