@@ -11,8 +11,12 @@ function renderDashboard () {
     const userInput = document.getElementById("userInput");
     const output = document.getElementById("output");
 
-    button.addEventListener('click', () => {
-        const value = userInput.value;
+    
+    button.addEventListener('click', getTickerData)
+}
+
+async function getTickerData() {
+    const value = userInput.value;
         if (!value) {
             output.textContent = "Please enter a ticker name!";
             return;
@@ -27,12 +31,15 @@ function renderDashboard () {
         })
         .then(({data, currentUserName}) => {
             output.textContent = `User: ${currentUserName}\nData: ${JSON.stringify(data)}`;
+            drawGraph(data);
         })
         .catch(err => {
             output.textContent = `Error: ${err.message}`
         })
-    })
+        
 }
+
+
 
 
 
