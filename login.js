@@ -1,15 +1,14 @@
 function renderLogin() {
-    app.innerHTML = `
-    <h2>Login</h2>
-    <input id="username" placeholder="Username" />
-    <input id="password" placeholder="password" />
-
-    <button id="loginBtn">Login</button>
-    `;
+   
     location.hash = ("/login")
+    app.replaceChildren();
+    
+    const template = document.getElementById("login-template");
+    const clone = template.content.cloneNode(true);
+    app.appendChild(clone);
 
     const buttonLogin = document.getElementById("loginBtn");
-    buttonLogin.addEventListener('click', login)
+    buttonLogin.addEventListener("click", login);
 }
 
 async function login() {
