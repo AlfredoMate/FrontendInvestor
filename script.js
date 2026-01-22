@@ -11,7 +11,7 @@ button.addEventListener('click', () => {
     fetch(`http://localhost:8080/data?ticker=${value}`)
     .then(res => res.json())
     .then(json => {
-        console.log(json)
+        //console.log(json)
         output.textContent = JSON.stringify(json)
     })
     .catch(err => {
