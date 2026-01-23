@@ -6,14 +6,15 @@ function drawGraph (dataJson) {
         myChart.destroy();
     }    
     const values = dataJson.map(value => value.close);
-    const labels = [1, 2, 3, 4, 5];
-   
+    console.log(values.length)
+    const graphValues = Array.from({length : values.length}, (_, i) => i+1)
+    console.log(graphValues)
 
     const ctx = document.getElementById("myChart");
     myChart = new Chart(ctx, {
     type: 'line',
     data: {
-      labels: values,
+      labels: graphValues,
       datasets: [{
         label: 'stock value',
         data: values,
