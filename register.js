@@ -24,8 +24,21 @@ async function sendRegisterRequest(usernameValue, passwordValue) {
             "password" : passwordValue
         }
     })
-
-    console.log(response.status)
+    if (response.status === 200) {
+        location.hash = "/login"
+    } else {
+        displayErrorMessage(response.status, usernameValue);
+    }
     
-    location.hash = "/login"
+    
+}
+
+function displayErrorMessage(status, username) {
+    const errorMessageToDisplay = document.getElementById("registerError");
+
+    if (status === 409) {
+        errorMessageToDisplay.textContent = `${username} alreay exists.`
+    }
+    
+
 }
