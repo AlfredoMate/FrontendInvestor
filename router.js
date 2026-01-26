@@ -10,6 +10,9 @@ function router() {
     if (route === "/dashboard") {
         renderDashboard();
     }
+    if (route === "/register") {
+        renderRegister();
+    }
         
     
     

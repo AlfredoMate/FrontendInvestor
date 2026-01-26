@@ -9,13 +9,17 @@ function renderLogin() {
 
     const buttonLogin = document.getElementById("loginBtn");
     buttonLogin.addEventListener("click", login);
+
+    const buttonRegisterFromLogin = document.getElementById("registerFromLogin");
+    buttonRegisterFromLogin.addEventListener("click", goToRegister);
+    
 }
 
 async function login() {
   const username = document.getElementById("username").value;
   const password = document.getElementById("password").value;
 
-  try {
+ 
     const response = await fetch("http://localhost:8080/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -24,7 +28,7 @@ async function login() {
     });
 
     if (!response.ok) {
-      throw new Error("Invalid credentials");
+      displayErrorMessage(response.status, username);
     }
 
     const data = await response.json();
@@ -36,8 +40,21 @@ async function login() {
     localStorage.setItem("token", data.token);
 
     //location.hash = "/dashboard";
+  
+  
+}
+
+function goToRegister () {
+  location.hash = ("/register");
+}
+
+function displayErrorMessage(errorStatusCode, username) {
+
+  const errorMessageDisplayed = document.getElementById("loginErrorMessage");
+  if (errorStatusCode === 404) {
+    errorMessageDisplayed.textContent = `User ${username} doesn't exist!`
   }
-  catch (err) {
-    document.getElementById("error").textContent = err.message;
+  if (errorStatusCode === 401) {
+    errorMessageDisplayed.textContent = `Incorrect password for unsername ${username}`
   }
 }
