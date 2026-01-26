@@ -18,7 +18,7 @@ function renderLogin() {
 async function login() {
   const username = document.getElementById("username").value;
   const password = document.getElementById("password").value;
-
+  
  
     const response = await fetch("http://localhost:8080/login", {
       method: "POST",
@@ -27,21 +27,11 @@ async function login() {
       headers: { username, password }
     });
 
-    if (!response.ok) {
+    if (response.ok) {
+      location.hash = ("/dashboard");      
+    } else {
       displayErrorMessage(response.status, username);
-    }
-
-    const data = await response.json();
-    if (data) {
-        location.hash = ("/dashboard")
-    }
-
-    // save token (or rely on cookie)
-    localStorage.setItem("token", data.token);
-
-    //location.hash = "/dashboard";
-  
-  
+    }  
 }
 
 function goToRegister () {
