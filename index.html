@@ -18,20 +18,37 @@
         <input class="userInput" id="userInput" type="text" placeholder="Enter ticker name">
         <button class="myButton" type="button" id="submitButton">Submit </button>
         <p id="output"></p>   
+        <input id="moneyInvested" placeholder="Stocks bought"/>
+        <button class="investedButton" type="button" id="investedButton">Simulate</button>
+        <canvas id="myChart"></canvas>
+        <p id="InvestmentResult"></p>
         </form>
     </template>
     <template id="login-template">
         <h2>Login</h2>
+        <h2 id="loginErrorMessage"></h2>
         <input id="username" placeholder="Username" />
         <input id="password" placeholder="password" />
 
         <button id="loginBtn">Login</button>
+        <h2>I don't have an account</h2>
+        <button id="registerFromLogin">Register</button>
+    </template>
+    <template id="register-template">
+        <h2>Register</h2>
+        <input id="registerUsername" placeholder="Username" />
+        <input id="registerPassword" placeholder="Password" />
+        <button id="registerButton">Register</button>
     </template>
 
     <script src="dashboard.js"></script> 
     <script src="router.js"></script>  
     <script src="login.js"></script>    
-      
+    <script src="register.js"></script>
+    <script src="graph.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    
 
 </body>
 </html>
