@@ -30,7 +30,7 @@ async function login() {
     if (response.ok) {
       location.hash = ("/dashboard");      
     } else {
-      displayErrorMessage(response.status, username);
+      displayErrorMessageLogin(response.status, username);
     }  
 }
 
@@ -38,7 +38,7 @@ function goToRegister () {
   location.hash = ("/register");
 }
 
-function displayErrorMessage(errorStatusCode, username) {
+function displayErrorMessageLogin(errorStatusCode, username) {
 
   const errorMessageDisplayed = document.getElementById("loginErrorMessage");
   if (errorStatusCode === 404) {
