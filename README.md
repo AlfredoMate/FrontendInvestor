@@ -1,1 +1,3 @@
-This is the Frontend of the app
+# Backend - Investor Project
+
+Javascript frontend for Investor Project.
