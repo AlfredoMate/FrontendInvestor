@@ -22,10 +22,10 @@ jobs:
 
       - name: Build docker image
         run: |
-          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/investor:$IMAGE_TAG .
-          docker tag ${{ secrets.DOCKERHUB_USERNAME }}/investor:$IMAGE_TAG ${{ secrets.DOCKERHUB_USERNAME }}/investor:latest
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/investor-frontend:$IMAGE_TAG .
+          docker tag ${{ secrets.DOCKERHUB_USERNAME }}/investor-frontend:$IMAGE_TAG ${{ secrets.DOCKERHUB_USERNAME }}/investinvestor-frontendor:latest
 
       - name: Push Docker image
         run: |
-          docker push ${{ secrets.DOCKERHUB_USERNAME }}/investor:$IMAGE_TAG
-          docker push ${{ secrets.DOCKERHUB_USERNAME }}/investor:latest
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/investor-frontend:$IMAGE_TAG
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/investor-frontend:latest
