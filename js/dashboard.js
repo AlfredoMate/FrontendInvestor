@@ -1,3 +1,5 @@
+import { CONFIG } from "./config";
+
 let stocksBought = 0;
 let dataStocks = null;
 
@@ -26,7 +28,7 @@ async function getTickerData() {
             output.textContent = "Please enter a ticker name!";
             return;
         }
-        fetch(`http://localhost:8080/data?ticker=${value}`, {
+        fetch(CONFIG.API_URL + `/data?ticker=${value}`, {
             credentials: "include"
         })
         .then(async res =>  {
