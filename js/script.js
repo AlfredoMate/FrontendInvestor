@@ -1,3 +1,5 @@
+import { CONFIG } from "./config";
+
 const button = document.getElementById("submitButton");
 const userInput = document.getElementById("userInput");
 const output = document.getElementById("output");
@@ -8,7 +10,7 @@ button.addEventListener('click', () => {
         output.textContent = "Please enter a ticker name!";
         return;
     }
-    fetch(`http://localhost:8080/data?ticker=${value}`)
+    fetch(CONFIG.API_URL + `data?ticker=${value}`)
     .then(res => res.json())
     .then(json => {
         //console.log(json)

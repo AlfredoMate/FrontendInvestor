@@ -1,3 +1,5 @@
+import { CONFIG } from "./config";
+
 function renderRegister () {
 
     
@@ -16,7 +18,7 @@ function renderRegister () {
 
 async function sendRegisterRequest(usernameValue, passwordValue) {
 
-    const url = "http://localhost:8080/register";
+    const url = CONFIG.API_URL + "/register";
     const response = await fetch(url, {
         method: "POST",
         headers: {

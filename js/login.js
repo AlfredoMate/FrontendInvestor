@@ -1,3 +1,5 @@
+import { CONFIG } from './config.js'
+
 function renderLogin() {
    
     location.hash = ("/login")
@@ -20,7 +22,7 @@ async function login() {
   const password = document.getElementById("password").value;
   
  
-    const response = await fetch("http://localhost:8080/login", {
+    const response = await fetch(CONFIG.API_URL + "/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include",
