@@ -1,6 +1,6 @@
-import { CONFIG } from "./config";
+import { CONFIG } from "./config.js";
 
-function renderRegister () {
+export function renderRegister () {
 
     
  
