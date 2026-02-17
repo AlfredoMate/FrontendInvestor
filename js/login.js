@@ -1,6 +1,6 @@
 import { CONFIG } from './config.js'
 
-function renderLogin() {
+export function renderLogin() {
    
     location.hash = ("/login")
     app.replaceChildren();

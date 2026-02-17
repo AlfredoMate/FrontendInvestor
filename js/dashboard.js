@@ -1,9 +1,9 @@
-import { CONFIG } from "./config";
+import { CONFIG } from "./config.js";
 
 let stocksBought = 0;
 let dataStocks = null;
 
-function renderDashboard () {
+export function renderDashboard () {
     location.hash = "/dashboard"
 
     app.replaceChildren();

@@ -1,3 +1,7 @@
+import { renderLogin } from './login.js';
+import { renderDashboard } from './dashboard.js';
+import { renderRegister } from './register.js';
+
 const app = document.getElementById("app");
 function router() {
 
