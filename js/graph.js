@@ -1,6 +1,6 @@
 let myChart = null;
 
-function drawGraph (dataJson) {
+export function drawGraph (dataJson) {
 
     if (myChart) {
         myChart.destroy();
