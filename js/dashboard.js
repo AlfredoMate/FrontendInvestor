@@ -1,4 +1,5 @@
 import { CONFIG } from "./config.js";
+import { drawGraph } from "./graph.js"
 
 let stocksBought = 0;
 let dataStocks = null;
